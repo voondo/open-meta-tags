@@ -89,7 +89,7 @@ module OpenMetaTags
 
       def normalize_description(description)
         return '' unless description
-        truncate(strip_tags(description).gsub(/\s+/, ' '), :length => 150)
+        truncate(strip_tags(description).gsub(/\s+/, ' '), :length => 420)
       end
       
       def normalize_admins(admins)
