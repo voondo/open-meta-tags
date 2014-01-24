@@ -47,7 +47,7 @@ module OpenMetaTags
       end
     end
 
-    meta_methods :title, :type, :url, :image, :site_name, :latitude, :longitude, :locality, :region, :email, :phone_number, :fax_number, :upc, :isbn
+    meta_methods :title, :type, :url, :image, :site_name, :latitude, :longitude, :locality, :region, :email, :phone_number, :fax_number, :upc, :isbn, :video
 
     #####  set default metadata values and display metadata
 
@@ -77,7 +77,7 @@ module OpenMetaTags
       result << tag(:meta, :property => 'og:country-name', :content => country_name) unless country_name.blank?
       
       # metaprogramming
-      [:title, :type, :url, :image, :site_name, :latitude, :longitude, :locality, :region, :email, :phone_number, :fax_number, :upc, :isbn].each do |attr|
+      [:title, :type, :url, :image, :site_name, :latitude, :longitude, :locality, :region, :email, :phone_number, :fax_number, :upc, :isbn, :video].each do |attr|
         result << tag(:meta, :property => "og:#{attr}", :content => open_meta_tags[attr]) unless open_meta_tags[attr].blank?
       end
 
